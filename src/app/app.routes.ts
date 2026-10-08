@@ -15,6 +15,11 @@ export const routes: Routes = [
     component: UserTasksComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'tasks',
+        pathMatch: 'prefix',
+      },
+      {
         path: 'tasks', //your-domain/users/uid/tasks
         component: TasksComponent,
       },
@@ -26,6 +31,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    component: NotFoundComponent
-  }
+    component: NotFoundComponent,
+  },
 ];
